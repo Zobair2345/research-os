@@ -3,13 +3,11 @@ import requests
 import pymupdf
 
 
-def extract_pdf_text(pdf_url):
+def load_research_pdf(pdf_url):
     response = requests.get(
         pdf_url,
         timeout=30,
-        headers={
-            "User-Agent": "ResearchOS/0.1"
-        }
+        headers={"User-Agent": "ResearchOS/0.1"}
     )
 
     response.raise_for_status()
@@ -17,9 +15,7 @@ def extract_pdf_text(pdf_url):
     pdf_bytes = response.content
 
     if not pdf_bytes.startswith(b"%PDF"):
-        raise ValueError(
-            "The URL did not return a valid PDF file."
-        )
+        raise ValueError("The URL did not return a valid PDF.")
 
     pages = []
 
@@ -32,11 +28,17 @@ def extract_pdf_text(pdf_url):
             document,
             start=1
         ):
-            text = page.get_text("text")
-
             pages.append({
                 "page_number": page_number,
-                "text": text.strip()
+                "text": page.get_text("text").strip()
             })
 
-    return pages
+    return {
+        "pdf_bytes": pdf_bytes,
+        "pages": pages
+    }
+
+
+# Preserve compatibility with existing code
+def extract_pdf_text(pdf_url):
+    return load_research_pdf(pdf_url)["pages"]

@@ -1,0 +1,289 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #345DE3;
+    --primary-light: #EEF2FF;
+    --text: #17233C;
+    --muted: #667085;
+    --border: #E5EAF1;
+    --background: #F8FAFD;
+}
+
+html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif;
+}
+
+.stApp {
+    background: var(--background);
+    color: var(--text);
+}
+
+.block-container {
+    max-width: 1500px;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+h1, h2, h3 {
+    color: var(--text) !important;
+    letter-spacing: -0.035em;
+}
+
+h1 {
+    font-weight: 800 !important;
+}
+
+p {
+    line-height: 1.65;
+}
+
+[data-testid="stSidebar"] {
+    background: #FFFFFF;
+    border-right: 1px solid var(--border);
+}
+
+[data-testid="stVerticalBlockBorderWrapper"] > div {
+    border-color: var(--border);
+    border-radius: 14px;
+}
+
+.stButton > button[kind="primary"] {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.stButton > button[kind="primary"]:hover {
+    background: #2449C7;
+    border-color: #2449C7;
+}
+
+.stButton > button[kind="secondary"] {
+    border-radius: 10px;
+    border-color: var(--border);
+}
+
+[data-testid="stTextInput"] input,
+[data-testid="stTextArea"] textarea {
+    background: #FFFFFF;
+    border-radius: 10px;
+    border-color: var(--border);
+}
+
+[data-testid="stSelectbox"] > div {
+    border-radius: 10px;
+}
+
+[data-testid="stTabs"] button {
+    font-weight: 600;
+}
+
+[data-testid="stExpander"] {
+    background: white;
+    border-radius: 10px;
+}
+
+.hero {
+    padding: 2rem 0 1.5rem;
+}
+
+.eyebrow {
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.05em;
+    color: var(--text);
+    margin: 0.5rem 0;
+}
+
+.hero-description {
+    color: var(--muted);
+    font-size: 1.05rem;
+    max-width: 680px;
+}
+
+.section-heading {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 1.5rem 0 0.8rem;
+}
+
+.paper-meta {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.reader-heading {
+    font-size: 1.5rem;
+    font-weight: 750;
+    color: var(--text);
+}
+
+.small-muted {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    .block-container {
+        padding: 1rem;
+    }
+
+    .hero {
+        padding: 1rem 0;
+    }
+}
+
+
+/* =========================================
+   RESEARCHOS LIGHT THEME FIX
+   ========================================= */
+
+   html,
+   body,
+   .stApp,
+   [data-testid="stAppViewContainer"] {
+       background-color: #F8FAFD;
+       color: #17233C;
+   }
+   
+   /* Sidebar */
+   [data-testid="stSidebar"],
+   [data-testid="stSidebarContent"] {
+       background-color: #FFFFFF !important;
+       color: #17233C !important;
+   }
+   
+   [data-testid="stSidebar"] p,
+   [data-testid="stSidebar"] label,
+   [data-testid="stSidebar"] span {
+       color: #344054;
+   }
+   
+   /* Input fields */
+   .stTextInput input,
+   .stTextArea textarea {
+       background-color: #FFFFFF !important;
+       color: #17233C !important;
+       border: 1px solid #D6DEEA !important;
+   }
+   
+   .stTextInput input::placeholder,
+   .stTextArea textarea::placeholder {
+       color: #98A2B3 !important;
+   }
+   
+   /* Select boxes */
+   [data-testid="stSelectbox"] [data-baseweb="select"] > div {
+       background-color: #FFFFFF !important;
+       color: #17233C !important;
+       border-color: #D6DEEA !important;
+   }
+   
+   /* Buttons */
+   .stButton button[kind="primary"],
+   .stFormSubmitButton button[kind="primary"] {
+       background-color: #345DE3 !important;
+       color: #FFFFFF !important;
+       border: 1px solid #345DE3 !important;
+   }
+   
+   .stButton button[kind="primary"]:hover,
+   .stFormSubmitButton button[kind="primary"]:hover {
+       background-color: #2449C7 !important;
+   }
+   
+   .stButton button[kind="secondary"] {
+       background-color: #FFFFFF !important;
+       color: #17233C !important;
+       border: 1px solid #D6DEEA !important;
+   }
+   
+   /* Cards and panels */
+   [data-testid="stVerticalBlockBorderWrapper"] {
+       background-color: #FFFFFF;
+       border-radius: 14px;
+   }
+   
+   /* Slider */
+   [data-testid="stSlider"] {
+       color: #17233C;
+   }
+   
+   /* Header */
+   [data-testid="stHeader"] {
+       background-color: #F8FAFD !important;
+   }
+   
+   /* Text and captions */
+   [data-testid="stCaptionContainer"] {
+       color: #667085 !important;
+   }
+   
+   /* Hide Streamlit footer */
+   footer {
+       visibility: hidden;
+   }
+/* =====================================
+   FIX RESEARCHOS TOP HEADER CLIPPING
+   ===================================== */
+
+   [data-testid="stMainBlockContainer"] {
+    padding-top: 4rem !important;
+}
+
+/* Keep the Streamlit header from overlapping content */
+[data-testid="stHeader"] {
+    height: 3rem !important;
+    background: #F8FAFD !important;
+}
+
+/* Give the workspace label enough vertical space */
+.eyebrow {
+    display: inline-block;
+    line-height: 1.6;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+/* Prevent the top row from clipping its contents */
+[data-testid="stHorizontalBlock"] {
+    overflow: visible;
+}   
+
+/* ResearchOS layout spacing */
+
+[data-testid="stMainBlockContainer"] {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2rem !important;
+}
+
+.researchos-topbar {
+    margin-bottom: 0.5rem !important;
+    padding: 0 !important;
+    min-height: 24px !important;
+}
+
+.hero {
+    padding: 0.75rem 0 1rem !important;
+}
+
+.hero-title {
+    margin: 0 0 0.5rem !important;
+}
+
+.hero-description {
+    margin: 0 !important;
+}
